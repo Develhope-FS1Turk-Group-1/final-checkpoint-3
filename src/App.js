@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import Home from './Home';
+import FilterResult from './FilterResult';
+import FilterPageAgain from './FilterPageAgain';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/filterPage/" element={<FilterPageAgain/>}/>
+        <Route path="/filterResult/" element={<FilterResult/>}/>
+      </Routes>
     </div>
+    </Router>
   );
 }
 
